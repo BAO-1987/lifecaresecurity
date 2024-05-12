@@ -1,0 +1,101 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.faq {
+  padding: 70px 0 64px;
+
+  &__content {
+    padding-left: 0;
+    margin-bottom: 47px;
+
+    p {
+      max-width: 712px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  details {
+    overflow: hidden;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-big);
+
+    &[open] {
+      summary {
+        color: var(--color-blue-300);
+
+        &::after {
+          transform: scaleY(-1);
+        }
+      }
+    }
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 32px;
+    font-weight: var(--fw-400);
+    font-size: clamp(1rem, 0.8333rem + 0.7407vi, 1.5rem);
+    line-height: 1.5;
+    transition: color 0.3s linear;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &::after {
+      @include mask;
+
+      right: 32px;
+      top: 14px;
+      mask-image: url("../images/icons/arrow-down.svg");
+      width: 32px;
+      height: 32px;
+      transform: scaleY(1);
+      transition: transform 0.3s linear;
+    }
+
+    + div {
+      padding: 8px 32px 32px;
+    }
+
+    &:hover {
+      color: var(--color-blue-300);
+    }
+  }
+
+  h2 {
+    margin-bottom: 27px;
+    color: var(--color-orange-600);
+  }
+
+  @include media(tablet-wide) {
+    &__content {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include media(tablet) {
+    padding-bottom: 45px;
+
+    &__content {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+
+        &::before {
+          bottom: -14px;
+        }
+      }
+    }
+  }
+}

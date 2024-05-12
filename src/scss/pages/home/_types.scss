@@ -1,0 +1,112 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.types {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(360deg, rgba(112, 210, 234, 0.27) 0%, rgba(127, 218, 241, 0.27) 100%);
+    inset: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-black);
+  }
+
+  &__content {
+    position: relative;
+    margin-bottom: 0;
+    padding: 29px 48px;
+
+    .btn {
+      margin-left: auto;
+      font-weight: var(--fw-400);
+      font-size: 24px;
+    }
+
+    p {
+      max-width: 431px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 16px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background: linear-gradient(180deg, #9de164 0%, #9adc59 100%);
+      inset: 0;
+    }
+
+    &--whole {
+      &::before {
+        background: linear-gradient(77deg, #81d2e4 0%, #469db2 100%);
+      }
+    }
+
+    &--uni {
+      &::before {
+        background: linear-gradient(0deg, #e8d5d4 0%, #d4aea8 37.37%, #ead4d4 100%);
+      }
+    }
+
+    &--custom {
+      &::before {
+        background: linear-gradient(110deg, #fbc668 0%, #dbab34 100%);
+      }
+    }
+
+    p {
+      position: relative;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        height: 1px;
+        width: 100%;
+        background-color: var(--color-black);
+      }
+    }
+
+    .btn {
+      margin-bottom: 32px;
+      font-weight: var(--fw-400);
+    }
+  }
+
+  h3 {
+    margin-bottom: 32px;
+    font-size: clamp(1.5rem, 1rem + 2.2222vi, 3rem);
+    letter-spacing: -0.05em;
+    color: var(--color-white);
+  }
+
+  img {
+    margin-bottom: 16px;
+  }
+}

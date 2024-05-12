@@ -1,0 +1,80 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.footer {
+  background-color: var(--color-blue-600);
+
+  .logo {
+    margin-right: 0;
+    max-width: 284px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-right: 64px;
+    gap: 62px;
+  }
+
+  &__block {
+    p {
+      margin-bottom: 16px;
+      font-weight: var(--fw-500);
+      font-size: 24px;
+      text-transform: uppercase;
+      color: var(--color-white);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 12px;
+
+    a {
+      font-size: 16px;
+      color: var(--color-white);
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: var(--color-blue-300);
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 16px 0;
+    background-color: var(--color-white);
+  }
+
+  &__copy {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+
+    p {
+      font-size: 16px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: "";
+        position: relative;
+        width: 24px;
+        height: 24px;
+        // background-image: url("../images/icons/mail.svg");
+        background-position: 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__policy {
+    display: flex;
+    gap: 64px;
+  }
+}
