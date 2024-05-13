@@ -56,4 +56,18 @@
   h2 {
     margin-bottom: 32px;
   }
+
+  @include media(tablet) {
+    margin-bottom: 30px;
+
+    &__item {
+      padding: 16px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
 }

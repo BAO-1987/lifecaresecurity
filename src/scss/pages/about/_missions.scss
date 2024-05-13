@@ -31,4 +31,14 @@
     font-weight: var(--fw-400);
     font-size: clamp(1.125rem, 1.0833rem + 0.1852vi, 1.25rem);
   }
+
+  @include media(tablet) {
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      max-width: 100%;
+    }
+  }
 }

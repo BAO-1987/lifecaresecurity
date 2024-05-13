@@ -31,6 +31,12 @@
     line-height: 1.2;
     color: var(--color-red-400) !important;
     background-color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      color: var(--color-white) !important;
+      background-color: var(--color-red-400);
+    }
   }
 
   &--home {
@@ -48,27 +54,18 @@
 
   @include media(tablet) {
     &__inner {
-      min-height: 450px;
-
-      &::before {
-        background: rgb(57, 66, 100) 98.371%;
-        opacity: 0.6;
-      }
+      flex-direction: column-reverse;
     }
 
-    &__content,
-    p {
+    &__content {
       max-width: 100%;
-
-      &::before {
-        content: none;
-      }
+      translate: none;
+      text-align: center;
     }
 
-    &--services {
-      #{$root}__content {
-        max-width: 100%;
-        translate: none;
+    &__image {
+      img {
+        width: 100%;
       }
     }
   }

@@ -14,6 +14,10 @@
     overflow: hidden;
     border-radius: 16px;
     padding: 24px;
+
+    &:nth-child(odd) {
+      border: 1px solid var(--color-black);
+    }
   }
 
   &__title {
@@ -74,5 +78,38 @@
 
   h2 {
     margin-bottom: 64px;
+  }
+
+  @include media(tablet-wide) {
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include media(tablet) {
+    &__item {
+      padding: 16px;
+    }
+
+    &__title {
+      margin-bottom: 16px;
+      gap: 16px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__title {
+      align-items: center;
+    }
   }
 }

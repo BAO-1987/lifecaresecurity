@@ -88,14 +88,15 @@ body {
 
 .logo {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   margin-right: rem(64);
   width: 100%;
   max-width: 236px;
 
   @include media(tablet) {
+    margin-right: 25px;
     max-width: 200px;
   }
 }
@@ -107,13 +108,19 @@ body {
   padding-left: 48px;
   gap: 60px;
 
-    p {
-      width: 100%;
-      max-width: 582px;
-    }
+  p {
+    width: 100%;
+    max-width: 582px;
+  }
+
+  @include media(tablet-wide) {
+    margin-bottom: 30px;
+    padding-left: 0;
+    gap: 25px;
+  }
 
   @include media(tablet) {
-    margin-bottom: 30px;
+    flex-direction: column;
   }
 }
 

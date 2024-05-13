@@ -1,14 +1,16 @@
 /* stylelint-disable indentation */
-$breakpoints: ("mobile-sm": 375px,
+$breakpoints: (
+  "mobile-sm": 375px,
   "mobile-s": 475px,
   "mobile-m": 576px,
-  "mobile-l":768px,
+  "mobile-l": 768px,
   "tablet": 992px,
   "tablet-wide": 1180px,
+  "desktop-m": 1320px,
   "desktop": 1280px,
   "desktop-wide": 1440px,
   "desktop-l": 1680px,
-   "desktop-xl": 1920px,
+  "desktop-xl": 1920px
 );
 
 @mixin media($width, $type: max) {
