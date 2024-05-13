@@ -7,13 +7,13 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 24px;
   }
 
   &__content {
     width: 100%;
-    max-width: 486px;
+    max-width: 484px;
+    translate: 0px 33px;
   }
 
   h1 {
@@ -33,19 +33,18 @@
     background-color: var(--color-white);
   }
 
-
   &--home {
+    #{$root}__inner {
+      align-items: center;
+    }
+
     #{$root}__content {
+      translate: none;
       p {
         margin-bottom: 32px;
       }
     }
-
   }
-
-
-
-
 
   @include media(tablet) {
     &__inner {

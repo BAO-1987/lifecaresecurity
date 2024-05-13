@@ -1,0 +1,78 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.additional {
+  padding: 32px 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    gap: 26px;
+
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background-image: url("../images/icons/death.svg");
+      background-position: 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &--child {
+      &::before {
+        background-image: url("../images/icons/child.svg");
+      }
+    }
+
+    &--death {
+      &::before {
+        background-image: url("../images/icons/rider.svg");
+      }
+    }
+
+    &--long {
+      &::before {
+        background-image: url("../images/icons/calendar.svg");
+      }
+    }
+
+    &--premium {
+      &::before {
+        background-image: url("../images/icons/premium.svg");
+      }
+    }
+
+    &--pill {
+      &::before {
+        background-image: url("../images/icons/pill.svg");
+      }
+    }
+  }
+
+  h3 {
+    font-size: clamp(1rem, 0.8333rem + 0.7407vi, 1.5rem);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    margin-bottom: 64px;
+  }
+}
