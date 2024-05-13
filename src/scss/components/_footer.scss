@@ -47,34 +47,28 @@
   }
 
   &__copy {
+    font-family: var(--font-family-secondary);
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
 
     p {
+      font-weight: var(--fw-400);
       font-size: 16px;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      &::before {
-        content: "";
-        position: relative;
-        width: 24px;
-        height: 24px;
-        // background-image: url("../images/icons/mail.svg");
-        background-position: 0 0;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
+      font-variant: small-caps;
+      text-transform: none;
     }
   }
 
   &__policy {
     display: flex;
     gap: 64px;
+
+    a {
+      font-weight: var(--fw-400);
+      font-size: 16px;
+      font-variant: small-caps;
+      text-decoration: underline;
+    }
   }
 }

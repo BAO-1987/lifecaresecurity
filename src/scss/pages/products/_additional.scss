@@ -26,9 +26,9 @@
       content: "";
       position: relative;
       display: block;
+      flex-shrink: 0;
       width: 60px;
       height: 60px;
-      flex-shrink: 0;
       background-image: url("../images/icons/death.svg");
       background-position: 0 0;
       background-size: cover;
@@ -67,7 +67,7 @@
   }
 
   h3 {
-    font-size: clamp(1rem, 0.8333rem + 0.7407vi, 1.5rem);
+    font-size: clamp(1rem, 0.8333rem + 0.7407vi, 24px);
     line-height: 1.5;
     letter-spacing: -0.02em;
   }
