@@ -88,7 +88,7 @@
         margin-bottom: 16px;
       }
 
-      span {
+      span:not([class]) {
         margin-bottom: 16px;
       }
 
@@ -98,7 +98,8 @@
         text-align: center;
 
         img {
-          aspect-ratio: 3/1;
+          object-position: top;
+          aspect-ratio: 2/1;
         }
 
         h3 {
@@ -125,6 +126,7 @@
     }
 
     &__item {
+      padding: 0;
       &:last-child {
         grid-column: auto;
         text-align: left;
@@ -132,8 +134,8 @@
     }
 
     img {
-      aspect-ratio: 3/1;
-      object-position: center;
+      aspect-ratio: 2/1;
+      object-position: top;
     }
   }
 }

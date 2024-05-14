@@ -71,10 +71,6 @@
   }
 
   @include media(mobile-m) {
-    &__inner {
-      min-height: 400px;
-    }
-
     .btn {
       max-width: 100%;
     }

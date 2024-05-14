@@ -53,10 +53,11 @@
     text-transform: uppercase;
     gap: 24px;
 
-    p {
+    p,
+    a {
       font-weight: var(--fw-400);
-      font-size: 16px;
       font-variant: small-caps;
+      font-size: 16px;
       letter-spacing: 0.09em;
       text-transform: lowercase;
     }
@@ -67,12 +68,12 @@
     gap: 64px;
 
     a {
-      font-weight: var(--fw-400);
-      font-size: 16px;
-      letter-spacing: 0.09em;
-      font-variant: small-caps;
-      text-transform: lowercase;
       text-decoration: underline;
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: var(--color-blue-600);
+      }
     }
   }
 
