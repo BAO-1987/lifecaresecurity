@@ -4,7 +4,7 @@
 .contacts {
   position: relative;
   z-index: 1;
-  padding-bottom: rem(88);
+  padding-bottom: 268px;
 
   &::before {
     content: "";
@@ -23,11 +23,13 @@
   }
 
   &__inner {
-    position: absolute;
-    right: 43px;
-    top: -3;
+    // position: absolute;
+    // right: 43px;
+    // top: -3;
     z-index: 1;
     border: 22px solid var(--color-white);
+    border-right: 0;
+    border-bottom: 0;
     border-radius: 50px;
     padding: 11px 11px 24px 16px;
     width: 100%;
@@ -84,6 +86,7 @@
 
     .btn {
       border-color: transparent;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
       max-width: 100%;
       font-size: 24px;
     }
@@ -91,14 +94,15 @@
 
   &__help {
     position: relative;
+    align-self: flex-end;
     z-index: 1;
     overflow: hidden;
     border-radius: 0 0 0 196px;
-    padding: 12px 18px 18px 24px;
-    width: 579px;
+    padding: 11px 18px 18px 24px;
+    width: 651px;
     background-color: var(--color-white);
     text-align: right;
-    translate: 31% 22px;
+    translate: 0 9px;
 
     h2 {
       margin-bottom: 10px;
@@ -133,20 +137,92 @@
     }
   }
 
-  @include media(desktop-m) {
-    &__help {
-      max-width: 550px;
-      translate: 20% 22px;
-    }
+  &__content {
+    position: absolute;
+    right: 47px;
+    top: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 22px;
+  }
 
+  // @include media(desktop-m) {
+  //   &__help {
+  //     max-width: 550px;
+  //     translate: 20% 22px;
+  //   }
+
+  //   &__inner {
+  //     right: 0;
+  //   }
+  // }
+
+  @include media(desktop-wide) {
+    padding-bottom: 300px;
+    &__help {
+      max-width: 560px;
+      translate: 0 -40px;
+
+      h2 {
+        padding-left: 0;
+        font-size: 26px;
+      }
+
+      a {
+        font-size: 16px;
+        &::before {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
     &__inner {
-      right: 0;
+      border: 5px solid var(--color-white);
     }
   }
 
-  @include media(desktop-wide) {
+  @include media(tablet) {
+    padding-bottom: 25px;
+
     &__help {
-      translate: 10% 22px;
+      translate: none;
+      border-radius: 0 0 196px 196px;
+      padding: 16px;
+      text-align: center;
+      align-self: center;
+      a {
+        justify-content: center;
+      }
+
+      h2 {
+        text-align: center;
+        width: auto;
+      }
+    }
+
+    &__inner {
+      max-width: 550px;
+    }
+
+    &__content {
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+    }
+
+    img {
+      margin-bottom: 25px;
+      aspect-ratio: 20 / 6;
+      object-position: left;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__help {
+      max-width: 100%;
+      border-radius: 0 0 80px 80px;
     }
   }
 }
