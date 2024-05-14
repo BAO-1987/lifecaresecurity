@@ -91,6 +91,8 @@
   }
 
   @include media(desktop) {
+    padding-bottom: 30px;
+
     &__desc {
       padding: 16px;
     }
